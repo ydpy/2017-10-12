@@ -1,4 +1,4 @@
-
+            
 var box = document.querySelector('.box');
 box.addEventListener('mousedown',down);
 function down(ev){
@@ -9,5 +9,10 @@ function down(ev){
     function move(ev){
         box.style.marginLeft = ev.clientX - starX;
         box.style.marginTop = ev.client - starY;
+    }
+    document.addEventListener('mouseup',up);
+    function up(ev){
+        document.removeEventListener('mousedown',down);
+        document.removeEventListener('mouseup',up);
     }
 }
